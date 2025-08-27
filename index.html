@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORANGE MEDIA - Leading News Portal</title>
+    <link rel="shortcut icon" href="files/main log.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Top Utilities Bar -->
+    <div class="top-bar">
+        <div class="top-bar-content">
+            <div class="date-time">
+                <span id="current-date"></span>
+                <span id="current-time"></span>
+            </div>
+            <div class="utilities">
+                <div class="lang-switcher">
+                    <label for="language" class="visually-hidden">Language</label>
+                    <select id="languageSelect" onchange="changeLanguage()">
+                        <option value="rw">🇷🇼 Kinyarwanda</option>
+                        <option value="en">🇺🇸 English</option>
+                        <option value="fr">🇫🇷 Français</option>
+                        <option value="sw">🇹🇿 Kiswahili</option>
+                    </select>
+                </div>
+                <div class="currency-converter">
+                    <input type="number" id="amount" value="1" min="0" step="0.01">
+                    <select id="fromCurrency">
+                        <option value="RWF">RWF</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                    </select>
+                    <span>=</span>
+                    <span id="convertedAmount">1.00</span>
+                    <select id="toCurrency">
+                        <option value="USD">USD</option>
+                        <option value="RWF">RWF</option>
+                        <option value="EUR">EUR</option>
+                        <option value="GBP">GBP</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Of Top Utilities Bar  -->
+
+    <!--  top header-->
+    <header>
+        <div class="up_mune">
+            <img src="files/main log.jpg" alt="ORANGE SITE" class="log_1">
+            <a href="#home" class="brand">
+                <div>
+                    <div class="site-title">ORANGE MEDIA</div>
+                    <div class="tagline">Leading News Portal</div>
+                </div>
+            </a>
+            <div class="search-box">
+                <input type="search" name="search" id="search-input" placeholder="Search News & Stories">
+                <svg class="bx bx-search" id="searchbuttom" viewBox="0 0 16 16">
+                    <g fill="none" stroke="orange" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                        <path d="m11.25 11.25l3 3"/>
+                        <circle cx="7.5" cy="7.5" r="4.75"/>
+                    </g>
+                </svg>
+            </div>
+            <div class="div">
+                <select name="search" id="select">
+                    <option value="all">All Categories</option>
+                    <option value="sport">Sports</option>
+                    <option value="politics">Politics</option>
+                    <option value="business">Business</option>
+                    <option value="tech">Technology</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="health">Health</option>
+                </select>
+            </div>
+
+            <button class="nav-toggle" id="toggleNav" aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <svg width="22" height="16" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
+            </button>
+        </div>
+    </header>
+    <!-- End of top header-->
+    <!-- Nav links-->
+
+    <div class="nav">
+        <ul id="links_container">
+            <li class="nav_active">
+                <a href="#home">
+                    <span class="lang-content active" data-lang="rw">AHABANZA</span>
+                    <span class="lang-content" data-lang="en">HOME</span>
+                    <span class="lang-content" data-lang="fr">ACCUEIL</span>
+                    <span class="lang-content" data-lang="sw">NYUMBANI</span><br>
+                    <svg class="ico1" width="24" height="24" viewBox="0 0 24 24">
+                            <path class="ico" fill="currentColor" d="M3 13h1v7c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-7h1a1 1 0 0 0 .707-1.707l-9-9a.999.999 0 0 0-1.414 0l-9 9A1 1 0 0 0 3 13zm7 7v-5h4v5h-4zm2-15.586l6 6V15l.001 5H16v-5c0-1.103-.897-2-2-2h-4c-1.103 0-2 .897-2 2v5H6v-9.586l6-6z"/>
+                        </svg>
+                </a>
+            </li>
+            <li>
+                <a href="#trending">
+                    <span class="lang-content active" data-lang="rw">INKURU ZIKINZE</span>
+                    <span class="lang-content" data-lang="en">TRENDING</span>
+                    <span class="lang-content" data-lang="fr">TENDANCES</span>
+                    <span class="lang-content" data-lang="sw">MAARUFU</span><br>
+                    <svg class="ico1" width="24" height="24" viewBox="0 0 24 24">
+                            <path class="ico" fill="currentColor" d="M17.66 11.2c-.23-.3-.51-.56-.77-.82c-.67-.6-1.43-1.03-2.07-1.66C13.33 7.26 13 4.85 13.95 3c-.95.23-1.78.75-2.49 1.32c-2.59 2.08-3.61 5.75-2.39 8.9c.04.1.08.2.08.33c0 .22-.15.42-.35.5c-.23.1-.47.04-.66-.12a.58.58 0 0 1-.14-.17c-1.13-1.43-1.31-3.48-.55-5.12C5.78 10 4.87 12.3 5 14.47c.06.5.12 1 .29 1.5c.14.6.41 1.2.71 1.73c1.08 1.73 2.95 2.97 4.96 3.22c2.14.27 4.43-.12 6.07-1.6c1.83-1.66 2.47-4.32 1.53-6.6l-.13-.26c-.21-.46-.77-1.26-.77-1.26m-3.16 6.3c-.28.24-.74.5-1.1.6c-1.12.4-2.24-.16-2.9-.82c1.19-.28 1.9-1.16 2.11-2.05c.17-.8-.15-1.46-.28-2.23c-.12-.74-.1-1.37.17-2.06c.19.38.39.76.63 1.06c.77 1 1.98 1.44 2.24 2.8c.04.14.06.28.06.43c.03.82-.33 1.72-.93 2.27Z"/>
+                        </svg>
+                </a>
+            </li>
+            <li>
+                <a href="#latest">
+                    <span class="lang-content active" data-lang="rw">INKURU NSHYA</span>
+                    <span class="lang-content" data-lang="en">LATEST NEWS</span>
+                    <span class="lang-content" data-lang="fr">DERNIÈRES</span>
+                    <span class="lang-content" data-lang="sw">HABARI MPYA</span><br>
+                    <svg class="ico1" width="24" height="24" viewBox="0 0 24 24">
+                            <path class="ico" fill="currentColor" d="m21 12l-4.37 6.16c-.37.52-.98.84-1.63.84h-3v-6H9v-3H3V7c0-1.1.9-2 2-2h10c.65 0 1.26.31 1.63.84L21 12zm-11 3H7v-3H5v3H2v2h3v3h2v-3h3v-2z"/>
+                        </svg>
+                </a>
+            </li>
+            <li>
+                <a href="#sports">
+                    <span class="lang-content active" data-lang="rw">SIPORO</span>
+                    <span class="lang-content" data-lang="en">SPORTS</span>
+                    <span class="lang-content" data-lang="fr">SPORTS</span>
+                    <span class="lang-content" data-lang="sw">MICHEZO</span><br>
+                    <svg class="ico1" width="24" height="24" viewBox="0 0 24 24">
+                            <path class="ico" fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2zM13 17h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                        </svg>
+                </a>
+            </li>
+            <li>
+                <a href="#references">
+                    <span class="lang-content active" data-lang="rw">IBYEREKERANYE</span>
+                    <span class="lang-content" data-lang="en">REFERENCES</span>
+                    <span class="lang-content" data-lang="fr">RÉFÉRENCES</span>
+                    <span class="lang-content" data-lang="sw">MAREJELEO</span><br>
+                    <svg class="ico1" width="24" height="24" viewBox="0 0 24 24">
+                            <path class="ico" fill="currentColor" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/>
+                        </svg>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- End of nav links-->
+
+    <!-- Main layout-->
+    <!-- Hero Section -->
+    <section id="home" class="container hero-section">
+        <div class="hero-content">
+            <h1>
+                <span class="lang-content active" data-lang="rw">Ikaze kuri Orange Media</span>
+                <span class="lang-content" data-lang="en">Welcome to Orange Media</span>
+                <span class="lang-content" data-lang="fr">Bienvenue à Orange Media</span>
+                <span class="lang-content" data-lang="sw">Karibu Orange Media</span>
+            </h1>
+            <p>
+                <span class="lang-content active" data-lang="rw">Amakuru y'ukuri, y'ubwiyunge, y'ingenzi yo muri Africa n'isi yose</span>
+                <span class="lang-content" data-lang="en">Your trusted source for authentic, credible, and comprehensive news from Africa and around the world</span>
+                <span class="lang-content" data-lang="fr">Votre source fiable d'informations authentiques et crédibles d'Afrique et du monde entier</span>
+                <span class="lang-content" data-lang="sw">Chanzo chako cha kuaminika cha habari za kweli kutoka Afrika na ulimwenguni</span>
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">50K+</span>
+                    <span class="lang-content active" data-lang="rw">Abasoma</span>
+                    <span class="lang-content" data-lang="en">Readers</span>
+                    <span class="lang-content" data-lang="fr">Lecteurs</span>
+                    <span class="lang-content" data-lang="sw">Wasomaji</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">1000+</span>
+                    <span class="lang-content active" data-lang="rw">Inkuru</span>
+                    <span class="lang-content" data-lang="en">Stories</span>
+                    <span class="lang-content" data-lang="fr">Articles</span>
+                    <span class="lang-content" data-lang="sw">Habari</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <span class="lang-content active" data-lang="rw">Akazi</span>
+                    <span class="lang-content" data-lang="en">Coverage</span>
+                    <span class="lang-content" data-lang="fr">Couverture</span>
+                    <span class="lang-content" data-lang="sw">Huduma</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Breaking News Ticker -->
+    <div class="container breaking-news">
+        <div class="breaking-news-content">
+            <strong>🔴 BREAKING:</strong>
+            <span class="lang-content active" data-lang="rw">Perezida Kagame yaganiriye na mugenzi we wa Senegal • Amashyirahamwe mpuzamahanga yasabye iterambere ry'ubucuruzi • Siporo: Amavubi yateguye mukino wa nyuma</span>
+            <span class="lang-content" data-lang="en">President Kagame meets with Senegal counterpart • International organizations call for trade development • Sports: Amavubi prepares for final match</span>
+            <span class="lang-content" data-lang="fr">Le Président Kagame rencontre son homologue sénégalais • Les organisations internationales appellent au développement commercial • Sports: Amavubi se prépare pour le match final</span>
+            <span class="lang-content" data-lang="sw">Rais Kagame akutana na mwenzake wa Senegal • Mashirika ya kimataifa yanaita maendeleo ya biashara • Michezo: Amavubi inajiandaa kwa mchezo wa mwisho</span>
+        </div>
+    </div>
+
+    <!-- Weather Widget -->
+    <div class="container weather-widget">
+        <h3>
+            <span class="lang-content active" data-lang="rw">Ibihe i Kigali</span>
+            <span class="lang-content" data-lang="en">Weather in Kigali</span>
+            <span class="lang-content" data-lang="fr">Météo à Kigali</span>
+            <span class="lang-content" data-lang="sw">Hali ya Hewa Kigali</span>
+        </h3>
+        <div class="weather-info">
+            <div class="weather-main">
+                <div class="temperature">24°C</div>
+                <div>☀️ Sunny</div>
+            </div>
+            <div class="weather-details">
+                <div>
+                    <span class="lang-content active" data-lang="rw">Ubushuhe:</span>
+                    <span class="lang-content" data-lang="en">Humidity:</span>
+                    <span class="lang-content" data-lang="fr">Humidité:</span>
+                    <span class="lang-content" data-lang="sw">Unyevu:</span> 65%
+                </div>
+                <div>
+                    <span class="lang-content active" data-lang="rw">Umuyaga:</span>
+                    <span class="lang-content" data-lang="en">Wind:</span>
+                    <span class="lang-content" data-lang="fr">Vent:</span>
+                    <span class="lang-content" data-lang="sw">Upepo:</span> 12 km/h
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Stories Swiper -->
+    <section class="container swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="cont">
+                    <img src="files/imgs/volley.jpeg" alt="Rwanda Military" class="img-swiper">
+                    <div class="story_sub_info">
+                        <span class="lang-content active" data-lang="rw">Baganiriye ku bufatanye bw'Ingabo z'u Rwanda na Burkina Faso mu guhangana n'iterabwoba</span>
+                        <span class="lang-content" data-lang="en">Rwanda and Burkina Faso discuss military cooperation in anti-terrorism efforts</span>
+                        <span class="lang-content" data-lang="fr">Le Rwanda et le Burkina Faso discutent de coopération militaire contre le terrorisme</span>
+                        <span class="lang-content" data-lang="sw">Rwanda na Burkina Faso wazungumzia ushirikiano wa kijeshi dhidi ya ugaidi</span>
+                        <a href="#" class="link-swiper">
+                            <span class="lang-content active" data-lang="rw">soma byinshi ..</span>
+                            <span class="lang-content" data-lang="en">read more ..</span>
+                            <span class="lang-content" data-lang="fr">lire plus ..</span>
+                            <span class="lang-content" data-lang="sw">soma zaidi ..</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="cont">
+                    <img src="files/imgs/volley.jpeg" alt="Commonwealth" class="img-swiper">
+                    <div class="story_sub_info">
+                        <span class="lang-content active" data-lang="rw">U Rwanda rwongeye gutorerwa kuba mu Nama y'Ubutegetsi ya Commonwealth</span>
+                        <span class="lang-content" data-lang="en">Rwanda re-elected to Commonwealth Local Government Forum Executive Board</span>
+                        <span class="lang-content" data-lang="fr">Le Rwanda réélu au Conseil Exécutif du Forum des Gouvernements Locaux du Commonwealth</span>
+                        <span class="lang-content" data-lang="sw">Rwanda imechaguliwa tena katika Bodi ya Utendaji ya Commonwealth</span>
+                        <a href="#" class="link-swiper">
+                            <span class="lang-content active" data-lang="rw">soma byinshi ..</span>
+                            <span class="lang-content" data-lang="en">read more ..</span>
+                            <span class="lang-content" data-lang="fr">lire plus ..</span>
+                            <span class="lang-content" data-lang="sw">soma zaidi ..</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="cont">
+                    <img src="files/icon.jpg" alt="Football" class="img-swiper">
+                    <div class="story_sub_info">
+                        <span class="lang-content active" data-lang="rw">Amavubi anganyije na Zimbabwe mu gushaka itike y'igikombe cy'isi (AMAFOTO)</span>
+                        <span class="lang-content" data-lang="en">Amavubi draw with Zimbabwe in World Cup qualifier (PHOTOS)</span>
+                        <span class="lang-content" data-lang="fr">Amavubi fait match nul contre le Zimbabwe en éliminatoires de la Coupe du Monde</span>
+                        <span class="lang-content" data-lang="sw">Amavubi wafanya sare na Zimbabwe katika ubainishaji wa Kombe la Dunia</span>
+                        <a href="#" class="link-swiper">
+                            <span class="lang-content active" data-lang="rw">soma byinshi ..</span>
+                            <span class="lang-content" data-lang="en">read more ..</span>
+                            <span class="lang-content" data-lang="fr">lire plus ..</span>
+                            <span class="lang-content" data-lang="sw">soma zaidi ..</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="cont">
+                    <img src="files/imgs/thoe.jpg" alt="Volleyball" class="img-swiper">
+                    <div class="story_sub_info">
+                        <span class="lang-content active" data-lang="rw">Volleyball (Zone Vi): Umukinnyi yakubise umutoza we amuvusha amaraso</span>
+                        <span class="lang-content" data-lang="en">Volleyball (Zone Vi): Player attacks coach causing injuries</span>
+                        <span class="lang-content" data-lang="fr">Volleyball (Zone Vi): Un joueur attaque son entraîneur causant des blessures</span>
+                        <span class="lang-content" data-lang="sw">Volleyball (Zone Vi): Mchezaji amashambulia kocha wake akamjeruhi</span>
+                        <a href="#" class="link-swiper">
+                            <span class="lang-content active" data-lang="rw">soma byinshi ..</span>
+                            <span class="lang-content" data-lang="en">read more ..</span>
+                            <span class="lang-content" data-lang="fr">lire plus ..</span>
+                            <span class="lang-content" data-lang="sw">soma zaidi ..</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Category Navigation -->
+    <div class="container category-tabs">
+        <div class="category-tab active" onclick="showCategory('all')">
+            <span class="lang-content active" data-lang="rw">Byose</span>
+            <span class="lang-content" data-lang="en">All</span>
+            <span class="lang-content" data-lang="fr">Tout</span>
+            <span class="lang-content" data-lang="sw">Yote</span>
+        </div>
+        <div class="category-tab" onclick="showCategory('politics')">
+            <span class="lang-content active" data-lang="rw">Politiki</span>
+            <span class="lang-content" data-lang="en">Politics</span>
+            <span class="lang-content" data-lang="fr">Politique</span>
+            <span class="lang-content" data-lang="sw">Siasa</span>
+        </div>
+        <div class="category-tab" onclick="showCategory('business')">
+            <span class="lang-content active" data-lang="rw">Ubucuruzi</span>
+            <span class="lang-content" data-lang="en">Business</span>
+            <span class="lang-content" data-lang="fr">Business</span>
+            <span class="lang-content" data-lang="sw">Biashara</span>
+        </div>
+        <div class="category-tab" onclick="showCategory('tech')">
+            <span class="lang-content active" data-lang="rw">Ikoranabuhanga</span>
+            <span class="lang-content" data-lang="en">Technology</span>
+            <span class="lang-content" data-lang="fr">Technologie</span>
+            <span class="lang-content" data-lang="sw">Teknolojia</span>
+        </div>
+        <div class="category-tab" onclick="showCategory('sports')">
+            <span class="lang-content active" data-lang="rw">Siporo</span>
+            <span class="lang-content" data-lang="en">Sports</span>
+            <span class="lang-content" data-lang="fr">Sports</span>
+            <span class="lang-content" data-lang="sw">Michezo</span>
+        </div>
+    </div>
+
+    <!-- Top Stories Section -->
+    <h1 id="trending" class="container section-title">
+        <span class="lang-content active" data-lang="rw">Inkuru Zikinze</span>
+        <span class="lang-content" data-lang="en">Top Stories</span>
+        <span class="lang-content" data-lang="fr">Top Articles</span>
+        <span class="lang-content" data-lang="sw">Habari Kuu</span>
+    </h1>
+
+    <div class="container stories-grid" id="trending-stories">
+        <article class="story-card" data-category="politics">
+            <img src="https://images.unsplash.com/photo-1586339949916-3e9457bef6d3?w=400&h=200&fit=crop" alt="Politics" class="story-image">
+            <div class="story-content">
+                <h3 class="story-title">
+                    <span class="lang-content active" data-lang="rw">Perezida Kagame yashimiye abasirikare bashya baje gusoza amasomo</span>
+                    <span class="lang-content" data-lang="en">President Kagame congratulates new military graduates</span>
+                    <span class="lang-content" data-lang="fr">Le Président Kagame félicite les nouveaux diplômés militaires</span>
+                    <span class="lang-content" data-lang="sw">Rais Kagame awapongeza wahitimu wa kijeshi</span>
+                </h3>
+                <p class="story-excerpt">
+                    <span class="lang-content active" data-lang="rw">Perezida w'u Rwanda Paul Kagame yashimiye abasirikare bashya baje gusoza amasomo y'ingenzi...</span>
+                    <span class="lang-content" data-lang="en">Rwanda's President Paul Kagame congratulated new military officers who completed their training...</span>
+                    <span class="lang-content" data-lang="fr">Le Président du Rwanda Paul Kagame a félicité les nouveaux officiers militaires...</span>
+                    <span class="lang-content" data-lang="sw">Rais wa Rwanda Paul Kagame aliwapongeza maafisa wapya wa kijeshi...</span>
+                </p>
+                <div class="story-meta">
+                    <span>
+                                <span class="lang-content active" data-lang="rw">Italiki 25, 2024</span>
+                    <span class="lang-content" data-lang="en">Jan 25, 2025</span>
+                    <span class="lang-content" data-lang="fr">25 Jan 2025</span>
+                    <span class="lang-content" data-lang="sw">Jan 25, 2025</span>
+                    </span>
+                    <a href="#" class="read-more">
+                        <span class="lang-content active" data-lang="rw">Soma Byinshi</span>
+                        <span class="lang-content" data-lang="en">Read More</span>
+                        <span class="lang-content" data-lang="fr">Lire Plus</span>
+                        <span class="lang-content" data-lang="sw">Soma Zaidi</span>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="story-card" data-category="sports">
+            <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=200&fit=crop" alt="Sports" class="story-image">
+            <div class="story-content">
+                <h3 class="story-title">
+                    <span class="lang-content active" data-lang="rw">APR FC yatsinze Rayon Sports ku bitego 2-1</span>
+                    <span class="lang-content" data-lang="en">APR FC defeats Rayon Sports 2-1</span>
+                    <span class="lang-content" data-lang="fr">APR FC bat Rayon Sports 2-1</span>
+                    <span class="lang-content" data-lang="sw">APR FC imeshinda Rayon Sports 2-1</span>
+                </h3>
+                <p class="story-excerpt">
+                    <span class="lang-content active" data-lang="rw">Mu mukino wa nyuma wa shampionship, APR FC yatsinze Rayon Sports...</span>
+                    <span class="lang-content" data-lang="en">In the final championship match, APR FC defeated Rayon Sports...</span>
+                    <span class="lang-content" data-lang="fr">Dans le match final du championnat, APR FC a battu Rayon Sports...</span>
+                    <span class="lang-content" data-lang="sw">Katika mchezo wa mwisho wa ubingwa, APR FC ilishinda Rayon Sports...</span>
+                </p>
+                <div class="story-meta">
+                    <span>
+                                <span class="lang-content active" data-lang="rw">Italiki 24, 2024</span>
+                    <span class="lang-content" data-lang="en">Jan 24, 2025</span>
+                    <span class="lang-content" data-lang="fr">24 Jan 2025</span>
+                    <span class="lang-content" data-lang="sw">Jan 24, 2025</span>
+                    </span>
+                    <a href="#" class="read-more">
+                        <span class="lang-content active" data-lang="rw">Soma Byinshi</span>
+                        <span class="lang-content" data-lang="en">Read More</span>
+                        <span class="lang-content" data-lang="fr">Lire Plus</span>
+                        <span class="lang-content" data-lang="sw">Soma Zaidi</span>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="story-card" data-category="business">
+            <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=200&fit=crop" alt="Business" class="story-image">
+            <div class="story-content">
+                <h3 class="story-title">
+                    <span class="lang-content active" data-lang="rw">Ubukungu bw'u Rwanda bwiyongera ku gipimo cy'ijanisha 8.2%</span>
+                    <span class="lang-content" data-lang="en">Rwanda's economy grows at 8.2% annual rate</span>
+                    <span class="lang-content" data-lang="fr">L'économie du Rwanda croît à un taux annuel de 8,2%</span>
+                    <span class="lang-content" data-lang="sw">Uchumi wa Rwanda unakua kwa kiwango cha 8.2% kwa mwaka</span>
+                </h3>
+                <p class="story-excerpt">
+                    <span class="lang-content active" data-lang="rw">Raporo nshya yerekana ko ubukungu bw'u Rwanda bwiyongereye...</span>
+                    <span class="lang-content" data-lang="en">New report shows Rwanda's economy has grown significantly...</span>
+                    <span class="lang-content" data-lang="fr">Un nouveau rapport montre que l'économie du Rwanda a considérablement augmenté...</span>
+                    <span class="lang-content" data-lang="sw">Ripoti mpya inaonyesha uchumi wa Rwanda umekua kwa kiasi kikubwa...</span>
+                </p>
+                <div class="story-meta">
+                    <span>
+                                <span class="lang-content active" data-lang="rw">Italiki 23, 2024</span>
+                    <span class="lang-content" data-lang="en">Jan 23, 2025</span>
+                    <span class="lang-content" data-lang="fr">23 Jan 2025</span>
+                    <span class="lang-content" data-lang="sw">Jan 23, 2025</span>
+                    </span>
+                    <a href="#" class="read-more">
+                        <span class="lang-content active" data-lang="rw">Soma Byinshi</span>
+                        <span class="lang-content" data-lang="en">Read More</span>
+                        <span class="lang-content" data-lang="fr">Lire Plus</span>
+                        <span class="lang-content" data-lang="sw">Soma Zaidi</span>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="story-card" data-category="tech">
+            <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=200&fit=crop" alt="Technology" class="story-image">
+            <div class="story-content">
+                <h3 class="story-title">
+                    <span class="lang-content active" data-lang="rw">Ikoranabuhanga rishya mu Rwanda rigamije guteza imbere ubwiyunge</span>
+                    <span class="lang-content" data-lang="en">New technology initiative in Rwanda aims to boost innovation</span>
+                    <span class="lang-content" data-lang="fr">Nouvelle initiative technologique au Rwanda visant à stimuler l'innovation</span>
+                    <span class="lang-content" data-lang="sw">Mradi mpya wa teknolojia Rwanda unalenga kuongeza uvumbuzi</span>
+                </h3>
+                <p class="story-excerpt">
+                    <span class="lang-content active" data-lang="rw">Kigali yaratangije gahunda y'ikoranabuhanga rishya...</span>
+                    <span class="lang-content" data-lang="en">Kigali has launched a new technology program...</span>
+                    <span class="lang-content" data-lang="fr">Kigali a lancé un nouveau programme technologique...</span>
+                    <span class="lang-content" data-lang="sw">Kigali imeanzisha mpango mpya wa teknolojia...</span>
+                </p>
+                <div class="story-meta">
+                    <span>
+                                <span class="lang-content active" data-lang="rw">Italiki 22, 2024</span>
+                    <span class="lang-content" data-lang="en">Jan 22, 2025</span>
+                    <span class="lang-content" data-lang="fr">22 Jan 2025</span>
+                    <span class="lang-content" data-lang="sw">Jan 22, 2025</span>
+                    </span>
+                    <a href="#" class="read-more">
+                        <span class="lang-content active" data-lang="rw">Soma Byinshi</span>
+                        <span class="lang-content" data-lang="en">Read More</span>
+                        <span class="lang-content" data-lang="fr">Lire Plus</span>
+                        <span class="lang-content" data-lang="sw">Soma Zaidi</span>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <!-- Latest News Section -->
+    <h1 id="latest" class="container section-title">
+        <span class="lang-content active" data-lang="rw">Inkuru Nshya</span>
+        <span class="lang-content" data-lang="en">Latest News</span>
+        <span class="lang-content" data-lang="fr">Dernières Nouvelles</span>
+        <span class="lang-content" data-lang="sw">Habari za Hivi Karibuni</span>
+    </h1>
+
+    <div class="container stories-grid">
+        <article class="story-card">
+            <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&h=200&fit=crop" alt="Breaking News" class="story-image">
+            <div class="story-content">
+                <h3 class="story-title">
+                    <span class="lang-content active" data-lang="rw">Amakuru mashya y'ingenzi yo mu turere tw'Afurika y'Iburasirazuba</span>
+                    <span class="lang-content" data-lang="en">Breaking news from West African regions</span>
+                    <span class="lang-content" data-lang="fr">Dernières nouvelles des régions d'Afrique de l'Ouest</span>
+                    <span class="lang-content" data-lang="sw">Habari za haraka kutoka maeneo ya Afrika Magharibi</span>
+                </h3>
+                <p class="story-excerpt">
+                    <span class="lang-content active" data-lang="rw">Amakuru mashya akomeye yavuye mu turere dutandukanye tw'Afurika...</span>
+                    <span class="lang-content" data-lang="en">Major breaking news from various West African regions...</span>
+                    <span class="lang-content" data-lang="fr">Nouvelles importantes en provenance de diverses régions d'Afrique de l'Ouest...</span>
+                    <span class="lang-content" data-lang="sw">Habari muhimu za haraka kutoka maeneo mbalimbali ya Afrika Magharibi...</span>
+                </p>
+                <div class="story-meta">
+                    <span>
+                                <span class="lang-content active" data-lang="rw">Ubu</span>
+                    <span class="lang-content" data-lang="en">Now</span>
+                    <span class="lang-content" data-lang="fr">Maintenant</span>
+                    <span class="lang-content" data-lang="sw">Sasa</span>
+                    </span>
+                    <a href="#" class="read-more">
+                        <span class="lang-content active" data-lang="rw">Soma Byinshi</span>
+                        <span class="lang-content" data-lang="en">Read More</span>
+                        <span class="lang-content" data-lang="fr">Lire Plus</span>
+                        <span class="lang-content" data-lang="sw">Soma Zaidi</span>
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <article class="story-card">
+            <img src="https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=200&fit=crop" alt="Health News" class="story-image">
+            <div class="story-content">
+                <h3 class="story-title">
+                    <span class="lang-content active" data-lang="rw">Ubuzima: Gahunda nshya y'ubuvuzi bw'ubwoba</span>
+                    <span class="lang-content" data-lang="en">Health: New mental health treatment program</span>
+                    <span class="lang-content" data-lang="fr">Santé: Nouveau programme de traitement de la santé mentale</span>
+                    <span class="lang-content" data-lang="sw">Afya: Mpango mpya wa matibabu ya afya ya akili</span>
+                </h3>
+                <p class="story-excerpt">
+                    <span class="lang-content active" data-lang="rw">Minisitiri w'ubuzima yaratangaje gahunda nshya...</span>
+                    <span class="lang-content" data-lang="en">Health Minister announces new program...</span>
+                    <span class="lang-content" data-lang="fr">Le Ministre de la Santé annonce un nouveau programme...</span>
+                    <span class="lang-content" data-lang="sw">Waziri wa Afya ametangaza mpango mpya...</span>
+                </p>
+                <div class="story-meta">
+                    <span>
+                                <span class="lang-content active" data-lang="rw">Isaha 2</span>
+                    <span class="lang-content" data-lang="en">2 hours ago</span>
+                    <span class="lang-content" data-lang="fr">Il y a 2 heures</span>
+                    <span class="lang-content" data-lang="sw">Masaa 2 yaliyopita</span>
+                    </span>
+                    <a href="#" class="read-more">
+                        <span class="lang-content active" data-lang="rw">Soma Byinshi</span>
+                        <span class="lang-content" data-lang="en">Read More</span>
+                        <span class="lang-content" data-lang="fr">Lire Plus</span>
+                        <span class="lang-content" data-lang="sw">Soma Zaidi</span>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <!-- Social Media Feed -->
+    <h2 class="container section-title">
+        <span class="lang-content active" data-lang="rw">Imbuga Nkoranyambaga</span>
+        <span class="lang-content" data-lang="en">Social Media Updates</span>
+        <span class="lang-content" data-lang="fr">Mises à Jour des Médias Sociaux</span>
+        <span class="lang-content" data-lang="sw">Masasisho ya Mitandao ya Kijamii</span>
+    </h2>
+
+    <div class="container social-feed">
+        <div class="social-card">
+            <div class="social-header">
+                <div class="social-icon facebook">📘</div>
+                <div>
+                    <h4>Orange Media Rwanda</h4>
+                    <small>
+                                <span class="lang-content active" data-lang="rw">Facebook • munota 15</span>
+                                <span class="lang-content" data-lang="en">Facebook • 15 minutes ago</span>
+                                <span class="lang-content" data-lang="fr">Facebook • il y a 15 minutes</span>
+                                <span class="lang-content" data-lang="sw">Facebook • dakika 15 zilizopita</span>
+                            </small>
+                </div>
+            </div>
+            <p>
+                <span class="lang-content active" data-lang="rw">🎉 Murakoze abasoma bacu 50,000! Turagenda tubana tuzakurikirana amakuru menshi...</span>
+                <span class="lang-content" data-lang="en">🎉 Thank you to our 50,000 readers! We continue to bring you more news...</span>
+                <span class="lang-content" data-lang="fr">🎉 Merci à nos 50 000 lecteurs ! Nous continuons à vous apporter plus d'actualités...</span>
+                <span class="lang-content" data-lang="sw">🎉 Asanteni wasomaji wetu 50,000! Tunaendelea kuwaletea habari zaidi...</span>
+            </p>
+        </div>
+
+        <div class="social-card">
+            <div class="social-header">
+                <div class="social-icon twitter">🐦</div>
+                <div>
+                    <h4>@OrangeMediaRW</h4>
+                    <small>
+                                <span class="lang-content active" data-lang="rw">Twitter • munota 30</span>
+                                <span class="lang-content" data-lang="en">Twitter • 30 minutes ago</span>
+                                <span class="lang-content" data-lang="fr">Twitter • il y a 30 minutes</span>
+                                <span class="lang-content" data-lang="sw">Twitter • dakika 30 zilizopita</span>
+                            </small>
+                </div>
+            </div>
+            <p>
+                <span class="lang-content active" data-lang="rw">📰 Inkuru nshya: Isomo ry'ubunyangamugayo mu mashuri yose...</span>
+                <span class="lang-content" data-lang="en">📰 Breaking: Citizenship education in all schools...</span>
+                <span class="lang-content" data-lang="fr">📰 Urgent: Éducation civique dans toutes les écoles...</span>
+                <span class="lang-content" data-lang="sw">📰 Haraka: Elimu ya uraia katika shule zote...</span>
+            </p>
+        </div>
+
+        <div class="social-card">
+            <div class="social-header">
+                <div class="social-icon instagram">📷</div>
+                <div>
+                    <h4>orangemedia_rwanda</h4>
+                    <small>
+                                <span class="lang-content active" data-lang="rw">Instagram • isaha 1</span>
+                                <span class="lang-content" data-lang="en">Instagram • 1 hour ago</span>
+                                <span class="lang-content" data-lang="fr">Instagram • il y a 1 heure</span>
+                                <span class="lang-content" data-lang="sw">Instagram • saa 1 iliyopita</span>
+                            </small>
+                </div>
+            </div>
+            <p>
+                <span class="lang-content active" data-lang="rw">📸 Amafoto y'ibirori by'umunsi w'ubwoba...</span>
+                <span class="lang-content" data-lang="en">📸 Photos from today's cultural festival...</span>
+                <span class="lang-content" data-lang="fr">📸 Photos du festival culturel d'aujourd'hui...</span>
+                <span class="lang-content" data-lang="sw">📸 Picha za sherehe za kitamaduni za leo...</span>
+            </p>
+        </div>
+    </div>
+
+    <!-- References Section - External News Sites -->
+    <h2 id="references" class="container section-title">
+        <span class="lang-content active" data-lang="rw">Ibyerekeranye - Imbuga z'Amakuru</span>
+        <span class="lang-content" data-lang="en">References - News Sources</span>
+        <span class="lang-content" data-lang="fr">Références - Sources d'Actualités</span>
+        <span class="lang-content" data-lang="sw">Marejeleo - Vyanzo vya Habari</span>
+    </h2>
+
+    <div class="container reference-section">
+        <div class="reference-tabs">
+            <button class="reference-tab active" onclick="showReference('cnn')">CNN</button>
+            <button class="reference-tab" onclick="showReference('bbc')">BBC</button>
+            <button class="reference-tab" onclick="showReference('kigali')">Kigali Today</button>
+            <button class="reference-tab" onclick="showReference('newtimes')">New Times</button>
+            <button class="reference-tab" onclick="showReference('rba')">RBA</button>
+        </div>
+
+        <div class="reference-content">
+            <iframe id="reference-frame" class="reference-frame" src="https://lite.cnn.com/" title="External News Source"></iframe>
+        </div>
+
+        <div style="margin-top: 1rem; padding: 1rem; background: #f8f9fa; border-radius: 10px; text-align: center;">
+            <p style="margin: 0; color: #666;">
+                <span class="lang-content active" data-lang="rw">⚠️ Amakuru ari hejuru atari aya Orange Media. Ni amakuru y'imbuga z'amakuru zindi.</span>
+                <span class="lang-content" data-lang="en">⚠️ Content above is not from Orange Media. It's from external news sources.</span>
+                <span class="lang-content" data-lang="fr">⚠️ Le contenu ci-dessus ne provient pas d'Orange Media. Il provient de sources d'actualités externes.</span>
+                <span class="lang-content" data-lang="sw">⚠️ Maudhui hapo juu si ya Orange Media. Ni kutoka vyanzo vya habari vya nje.</span>
+            </p>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="container footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>Orange Media</h3>
+                    <p>
+                        <span class="lang-content active" data-lang="rw">Urubuga rukomeye rw'amakuru mu Rwanda rugamije gutanga amakuru y'ukuri, y'ubwiyunge kandi y'ingenzi.</span>
+                        <span class="lang-content" data-lang="en">Leading news portal in Rwanda dedicated to providing authentic, credible, and comprehensive news.</span>
+                        <span class="lang-content" data-lang="fr">Portail d'actualités leader au Rwanda dédié à fournir des informations authentiques, crédibles et complètes.</span>
+                        <span class="lang-content" data-lang="sw">Ukurasa mkuu wa habari Rwanda uliojitolea kutoa habari za kweli, za kuaminika na za kina.</span>
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">📺</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h3>
+                        <span class="lang-content active" data-lang="rw">Ibyiciro</span>
+                        <span class="lang-content" data-lang="en">Categories</span>
+                        <span class="lang-content" data-lang="fr">Catégories</span>
+                        <span class="lang-content" data-lang="sw">Kategoria</span>
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <span class="lang-content active" data-lang="rw">Politiki</span>
+                                <span class="lang-content" data-lang="en">Politics</span>
+                                <span class="lang-content" data-lang="fr">Politique</span>
+                                <span class="lang-content" data-lang="sw">Siasa</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="lang-content active" data-lang="rw">Siporo</span>
+                                <span class="lang-content" data-lang="en">Sports</span>
+                                <span class="lang-content" data-lang="fr">Sports</span>
+                                <span class="lang-content" data-lang="sw">Michezo</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="lang-content active" data-lang="rw">Ubucuruzi</span>
+                                <span class="lang-content" data-lang="en">Business</span>
+                                <span class="lang-content" data-lang="fr">Business</span>
+                                <span class="lang-content" data-lang="sw">Biashara</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="lang-content active" data-lang="rw">Ikoranabuhanga</span>
+                                <span class="lang-content" data-lang="en">Technology</span>
+                                <span class="lang-content" data-lang="fr">Technologie</span>
+                                <span class="lang-content" data-lang="sw">Teknolojia</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>
+                        <span class="lang-content active" data-lang="rw">Amakuru y'Ikigo</span>
+                        <span class="lang-content" data-lang="en">Company Info</span>
+                        <span class="lang-content" data-lang="fr">Info Entreprise</span>
+                        <span class="lang-content" data-lang="sw">Taarifa za Kampuni</span>
+                    </h3>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <span class="lang-content active" data-lang="rw">Ibitwerekeye</span>
+                                <span class="lang-content" data-lang="en">About Us</span>
+                                <span class="lang-content" data-lang="fr">À Propos</span>
+                                <span class="lang-content" data-lang="sw">Kutuhusu</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="lang-content active" data-lang="rw">Akazi</span>
+                                <span class="lang-content" data-lang="en">Careers</span>
+                                <span class="lang-content" data-lang="fr">Carrières</span>
+                                <span class="lang-content" data-lang="sw">Kazi</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="lang-content active" data-lang="rw">Twandikire</span>
+                                <span class="lang-content" data-lang="en">Contact</span>
+                                <span class="lang-content" data-lang="fr">Contact</span>
+                                <span class="lang-content" data-lang="sw">Wasiliana</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="lang-content active" data-lang="rw">Amabwiriza</span>
+                                <span class="lang-content" data-lang="en">Privacy Policy</span>
+                                <span class="lang-content" data-lang="fr">Politique de Confidentialité</span>
+                                <span class="lang-content" data-lang="sw">Sera ya Faragha</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>
+                        <span class="lang-content active" data-lang="rw">Inyandiko</span>
+                        <span class="lang-content" data-lang="en">Newsletter</span>
+                        <span class="lang-content" data-lang="fr">Newsletter</span>
+                        <span class="lang-content" data-lang="sw">Jarida</span>
+                    </h3>
+                    <p>
+                        <span class="lang-content active" data-lang="rw">Shyiraho email yawe kugira ngo ubone amakuru mashya:</span>
+                        <span class="lang-content" data-lang="en">Subscribe to get the latest news updates:</span>
+                        <span class="lang-content" data-lang="fr">Abonnez-vous pour recevoir les dernières mises à jour:</span>
+                        <span class="lang-content" data-lang="sw">Jiandikishe ili upate masasisho ya habari:</span>
+                    </p>
+                    <div class="newsletter-form">
+                        <input type="email" placeholder="Email" id="newsletter-email">
+                        <button onclick="subscribeNewsletter()">
+                            <span class="lang-content active" data-lang="rw">Kwandikisha</span>
+                            <span class="lang-content" data-lang="en">Subscribe</span>
+                            <span class="lang-content" data-lang="fr">S'abonner</span>
+                            <span class="lang-content" data-lang="sw">Jiandikishe</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <h3>
+                    <span class="lang-content active" data-lang="rw">Twandikire</span>
+                    <span class="lang-content" data-lang="en">Contact Us</span>
+                    <span class="lang-content" data-lang="fr">Contactez-nous</span>
+                    <span class="lang-content" data-lang="sw">Wasiliana Nasi</span>
+                </h3>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <strong>Email:</strong><br> tuyambazegilbert05@gmail.com
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <strong>
+                                <span class="lang-content active" data-lang="rw">Telefoni:</span>
+                                <span class="lang-content" data-lang="en">Phone:</span>
+                                <span class="lang-content" data-lang="fr">Téléphone:</span>
+                                <span class="lang-content" data-lang="sw">Simu:</span>
+                            </strong><br> +250 793 438 873
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <strong>
+                                <span class="lang-content active" data-lang="rw">Aderesi:</span>
+                                <span class="lang-content" data-lang="en">Address:</span>
+                                <span class="lang-content" data-lang="fr">Adresse:</span>
+                                <span class="lang-content" data-lang="sw">Anwani:</span>
+                            </strong><br> Kigali, Rwanda
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🌐</div>
+                        <div>
+                            <strong>
+                                <span class="lang-content active" data-lang="rw">Urubuga:</span>
+                                <span class="lang-content" data-lang="en">Website:</span>
+                                <span class="lang-content" data-lang="fr">Site Web:</span>
+                                <span class="lang-content" data-lang="sw">Tovuti:</span>
+                            </strong><br> WWW.orangeMedia.vercel.app
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-grid">
+                    <p>&copy; 2025 Orange Media Rwanda.
+                        <span class="lang-content active" data-lang="rw">Uburenganzira bwose burahawe.</span>
+                        <span class="lang-content" data-lang="en">All rights reserved.</span>
+                        <span class="lang-content" data-lang="fr">Tous droits réservés.</span>
+                        <span class="lang-content" data-lang="sw">Haki zote zimehifadhiwa.</span>
+                    </p>
+                    <p>
+                        <a href="https://gilbert-tuyambaze.vercel.app/" style="text-decoration: none; font-weight: 700; cursor: pointer; color: #ff6b35;">
+                            <span class="lang-content active" data-lang="rw">Byakozwe na TUYAMBAZE Gilbert</span>
+                            <span class="lang-content" data-lang="en">Developed by TUYAMBAZE Gilbert</span>
+                            <span class="lang-content" data-lang="fr">Développé par TUYAMBAZE Gilbert</span>
+                            <span class="lang-content" data-lang="sw">Imetengenezwa na TUYAMBAZE Gilbert</span>
+                        </a>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
